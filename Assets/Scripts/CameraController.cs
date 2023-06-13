@@ -39,16 +39,24 @@ public class CameraController : MonoBehaviour
     public GameObject Inicio;
     public GameObject Final;
     public string LevelToLoad;
+    public MapCreator generadormapa;
+    float a = 1;
 
     float YMin;
     float YMax;
     bool destroyedDificulties;
+
+    private void Awake()
+    {
+        
+    }
     void Start()
     {
-        //Encontrar los Game Objects
         Inicio = GameObject.FindGameObjectWithTag("Inicio");
         Final = GameObject.FindGameObjectWithTag("Final");
         Player = GameObject.FindGameObjectWithTag("Player");
+
+
 
         //Definir los límites de movimiento de cámara
         YMin = Inicio.transform.position.y - 0.5f;
@@ -68,16 +76,19 @@ public class CameraController : MonoBehaviour
         Destroy(CambDif);
         Destroy(Dif);
         Destroy(Fac);
+
+
+
+
     }
 
     void FixedUpdate()
     {
         float y = Mathf.Clamp(Player.transform.position.y, YMin, YMax);
         this.transform.position = new Vector3(0, y, this.transform.position.z);
-        
+
         if (Player.GetComponent<PlayerController>().dead) StartCoroutine(Shaking());
     }
-
     void Update()
     {
         if (Ended) return;
@@ -107,12 +118,13 @@ public class CameraController : MonoBehaviour
         Salir.SetActive(Paused);
         Imag.SetActive(Paused);
         MuteButton.SetActive(Paused);
-        if(!destroyedDificulties){
+        if (!destroyedDificulties)
+        {
             Fac.SetActive(false);
             Dif.SetActive(false);
             CambDif.SetActive(Paused);
         }
-        
+
         Player.GetComponent<PlayerController>().Paused = Paused;
     }
 

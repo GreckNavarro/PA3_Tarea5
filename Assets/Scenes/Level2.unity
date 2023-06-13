@@ -706,7 +706,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: add59980edbbb3e4994f198eabf4ab42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foreground: {fileID: 0}
+  foreground: {fileID: 7678382458773486509, guid: 78351ae6d9f34bf4e9b8e7e4ae9df139,
+    type: 3}
   fadeInTime: 0
   fadeInColor: {r: 0, g: 0, b: 0, a: 0}
   fadeOutTime: 0

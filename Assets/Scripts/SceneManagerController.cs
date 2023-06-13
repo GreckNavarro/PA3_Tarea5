@@ -29,7 +29,7 @@ public class SceneManagerController : MonoBehaviour
 
         Instance = this;
 
-        DontDestroyOnLoad(this.gameObject);
+       // DontDestroyOnLoad(this.gameObject);
     }
 
     private void Start() {
@@ -58,14 +58,16 @@ public class SceneManagerController : MonoBehaviour
         StartCoroutine(LoadSceneCoroutine(scenNameToLoad));
     }
 
+
     private IEnumerator FadeCoroutine(float targetTime, Color targetColor){
         float totalTime = 0f;
+        Debug.Log("Aqui es");
         while (totalTime < targetTime)
         {
             totalTime += Time.deltaTime;
             float t = totalTime / targetTime;
 
-            yield return new WaitForSeconds(Time.deltaTime);
+            yield return null;
 
             foreground.color = Color.Lerp(imageColor, targetColor, t);
         }
@@ -74,10 +76,9 @@ public class SceneManagerController : MonoBehaviour
     }
 
     private IEnumerator LoadSceneCoroutine(string sceneName){
-        yield return new WaitForSeconds(fadeInTime);
+     
 
         AsyncOperation asyncLoadLevel = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
-
         while (!asyncLoadLevel.isDone){
             Debug.Log("Loading the Scene"); 
             yield return null;

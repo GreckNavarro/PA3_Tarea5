@@ -2262,6 +2262,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 114522399989267828, guid: f44e292d5b7bd5a42ab9f75f140628fc,
+        type: 3}
+      propertyPath: GoingRight
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 212041724402108470, guid: f44e292d5b7bd5a42ab9f75f140628fc,
         type: 3}
       propertyPath: m_Color.a

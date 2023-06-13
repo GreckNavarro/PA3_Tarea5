@@ -1166,6 +1166,7 @@ MonoBehaviour:
   Inicio: {fileID: 0}
   Final: {fileID: 0}
   LevelToLoad: Level2
+  generadormapa: {fileID: 0}
 --- !u!82 &82520884212652880
 AudioSource:
   m_ObjectHideFlags: 0

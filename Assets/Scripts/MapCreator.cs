@@ -44,7 +44,9 @@ public class MapCreator : MonoBehaviour {
 
     void CreateMapa()
     {
+        Debug.Log("Creado");
         GameObject Ini = Instantiate(Inicio, new Vector3(0, -3.5f, 0), Quaternion.identity) as GameObject;
+
         bool dummy = false;
         NumRoads = Random.Range(2, 26);
         for (int i = 0; i < NumRoads; i++)
@@ -55,7 +57,7 @@ public class MapCreator : MonoBehaviour {
             PutObject(-3.5f + i, dummy);
         }
         GameObject Fin = Instantiate(Final, new Vector3(0, -3.5f + 1*NumRoads + 2.5f, 0), Quaternion.identity) as GameObject;
-        Instantiate(Camera, new Vector3(0f,0f,-10f), Quaternion.identity);
+
     }
 
     void PutObject(float y, bool can)
